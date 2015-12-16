@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.angularjs.org/1.5.0-rc.0/angular.min.js">
+    </script>
+</head>
+<body>
+<input type="text" ng-model="name" placeholder="what is your name?" ng-init="name='BoJack'"/>
+<h1>my name is: {{name}}</h1>
+<label for="dropdown">my favorite pets: </label>
+<select name="dropdown" id="dropdown" ng-model="pets">
+    <option value="dogs">dogs</option>
+    <option value="cats">cats</option>
+    <option value="dogs & cats">dogs & cats</option>
+    <option value="neither">neither</option>
+</select>
+<h3>I love {{pets}} <3!</h3>
+</body>
+</html>
