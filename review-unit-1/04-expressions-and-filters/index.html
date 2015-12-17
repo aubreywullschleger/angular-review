@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.angularjs.org/1.5.0-rc.0/angular.min.js"></script>
+</head>
+<body>
+<main>
+    <section>
+        <h1>interpolation & expressions review</h1>
+        <h3>1 + 2 = {{1+2}}</h3>
+        <h3>my name isn't {{"BoJack" + " Horseman"}}</h3>
+        <h3>the array [99, 43, 22] is {{ [99, 43, 22].length }} items long</h3>
+        <h3>html {{3.14159265359 | currency : "&euro;" }}</h3>
+        <input type="text" ng-model="name" placeholder="what is your name?"/>
+        <h3>my name if it is yelled: {{name | uppercase }}</h3>
+        <h3>my name if it is whispered: {{name | lowercase }}</h3>
+        <h3>three decimals: {{3.14159265359 | number:3 }}, six decimals: {{3.14159265359 | number:6 }}, one decimal: {{3.14159265359 | number:1 }}</h3>
+        <select name="digits" id="digits" ng-model="digits">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+        </select>
+
+        <h3>here you go, the first {{digits}}
+            <ng-pluralize count="digits"
+                          when="{'1' : 'digit',
+                'other' : 'digits'}"
+                    ></ng-pluralize>
+            of pi!</h3>
+        <h3>{{ 3.14159265359 | number:digits }}</h3>
+    </section>
+    <br/>
+    <section>
+        <h1>tip calculator</h1>
+        <h3>
+            $<input type="text" ng-model="price" placeholder="0.00"/>
+        </h3>
+        <h3>
+            tip percentage: <select name="tip" id="tip" ng-model="tip">
+            <option value="0.1">10%</option>
+            <option value="0.15">15%</option>
+            <option value="0.2">20%</option>
+            <option value="0.25">25%</option>
+        </select>
+        </h3>
+        <h3>tip: {{price * tip | currency}}</h3>
+    </section>
+    <section>
+        this is not the window!: {{this}}
+    </section>
+</main>
+<aside>
+    <h1>mad lib</h1>
+    <input type="text" ng-model="boyName" placeholder="boy's name"/>
+    <input type="text" ng-model="adj" placeholder="adjective"/>
+    <input type="text" ng-model="bodyPart" placeholder="body part"/>
+    <input type="text" ng-model="otherBodyPart" placeholder="body part (plural)"/>
+    <input type="text" ng-model="animal" placeholder="animal (plural)"/>
+    <input type="text" ng-model="noun" placeholder="noun (plural)" />
+    <input type="text" ng-model="verb" placeholder="verb (ex: runs)"/>
+    <h3>I'm in love with <span>{{boyName}}</span>. He's so <span>{{adj}}</span>! He has big flat <span>{{bodyPart}}</span>, and when our <span>{{otherBodyPart}}</span> meet, I get <span>{{animal}}</span> in my stomach. I've fallen for him like a ton of <span>{{noun}}</span>, and he <span>{{verb}}</span> for me, too. But I think he's got another girlfriend. What should I do?</h3>
+</aside>
+</body>
+</html>
