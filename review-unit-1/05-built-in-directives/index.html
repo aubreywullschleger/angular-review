@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" ng-app="cameraShopApp">
+<head>
+    <meta charset="UTF-8">
+    <title>camera shop app</title>
+    <script src="https://code.angularjs.org/1.5.0-rc.0/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body ng-controller="CameraShopController">
+<article ng-repeat="camera in cameras">
+    <img ng-src="{{camera.image}}" ng-alt="{{camera.title}}"/>
+    <h2>{{camera.title}}</h2>
+    <h4>rating: {{camera.rating}}</h4>
+    <h4 ng-class="{onSale: camera.onSale == true}">price: ${{camera.price}}</h4>
+    <h4 ng-show="camera.onSale === true">on sale!</h4>
+</article>
+</body>
+</html>

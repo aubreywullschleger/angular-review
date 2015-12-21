@@ -1,0 +1,11 @@
+.highlight {
+    background-color: yellow;
+}
+
+input {
+    border: 4px solid darkred;
+}
+
+.password {
+    border: 4px solid seagreen;
+}
