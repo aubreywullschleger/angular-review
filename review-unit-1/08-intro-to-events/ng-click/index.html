@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>angular review intro to events</title>
+    <script src="https://code.angularjs.org/1.5.0-rc.0/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="MyController">
+<h3>the number is: {{number}}</h3>
+<button ng-click="pickRandomNumber()">pick random number pls</button>
+<br/>
+<br/>
+<input type="text" ng-model="word" placeholder="type a word pls"/>
+<br/>
+<input type="submit" ng-click="reverseWord()" value="reverse"/>
+<h4>{{reversedWord}}</h4>
+</body>
+</html>
