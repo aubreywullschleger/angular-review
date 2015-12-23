@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="animationApp" ng-cloak>
+<head>
+  <meta charset="UTF-8">
+  <title>angular review animations</title>
+  <script src="https://code.angularjs.org/1.5.0-rc.0/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.5.0-rc.0/angular-animate.min.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="MainController">
+  <div ng-if="toggleBoolean">
+    Fade me!
+  </div>
+  <input type="text" ng-model="name">
+  <div ng-hide="name == 'Elie'">
+    You're not Elie!
+  </div>
+  <div ng-show="name == 'Elie'">
+    Hi Elie!
+  </div>
+  <button ng-click="toggleBoolean = !toggleBoolean">Toggle fade</button>
+  <br>
+  <input type="text" ng-model="search" placeholder="search for instructor">
+  <div ng-repeat="instructor in instructors | filter:search">
+    {{instructor}}
+  </div>
+</body>
+</html>
